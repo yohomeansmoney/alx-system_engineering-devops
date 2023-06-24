@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ssh ubuntu@192.168.92.186
+mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys
+chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
+echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDZltjEes9iHJuC1mJ6//u1vSP6Vhni5xVScVegA/EQdHPwSDujsih5mYE1alQTNxPqhQ+3kL8tsrdZxEZXKT+jT3chlw+lGrpyhoM7EUaYQ9Oi7Rmqfy3nBuAJK8AhhOKLijGBR/df9rk8TFDfj4ZVYPdmyV1zlO9jzlKrI1H3pebM9MaAEiSI34b/r9RDc3bEVJAuD5YkMl4F3WBdD6y/cV7mi9nrU+YRPv/ovqDe4pka5/pjhjd7xiHPySOiugRvP89F2ojFxJmqVOkFMBI7GkQi8RqXCAy60Jd27F0IcSEeXzRQ9lupUMoNEbPnZg3ahuFmhPcgD3B5MSLJKG7AaLSdVCXjBBqmF5G/kmAv2KuwE+ynovxPdLmNGEvNSp2lsbhiJHJaszFpMXBMafggz7B7Uz6hJKszrfObvIpFwg9tjltBw7cjbS+Gh507eSypVo+THg7c/O+QrzIH9UorUzpmVy2xope9HqUvFEsouOAizLbsf9IsViZubKDu8sSjKevIMH6M6QUi665aAPVPEJGywVoMzr0gGP7zeZd9QWw8u+MfRiUsvh4XD4xJ61/QlNSnZ9ZbBpkvX/NQ5+MQhm7H2aZHVS+0YWpWIjFgkVqfvH/i6NuREz849Au5RgXodmQ6V8Xamk7RnsXdOfAMnED480Rykf+/qYEftZrN9w== root@cf938c25ee0c
