@@ -1,0 +1,29 @@
+global
+    log /dev/log    local0
+    stats socket /run/haproxy/admin.sock mode 660 level admin
+
+defaults
+    log     global
+    mode    http
+    option  httplog
+    timeout connect  10s
+    timeout client  30s
+    timeout server  30s
+
+frontend http_frontend
+      mode http
+      bind *:80
+      bind *:443 ssl crt  /etc/haproxy/certs/kofra.tech.pem alpn h2,http/1.1  ssl-min-ver TLSv1.2
+      redirect scheme https code 301 if !{ ssl_fc }
+      default_backend   http_servers
+
+backend http_servers
+      mode http
+      balance roundrobin
+      option httpchk HEAD /
+      http-response set-header X-Frame-Options SAMEORIGIN
+      http-response set-header X-XSS-Protection 1;mode=block
+      http-response set-header X-Content-Type-Options nosniff
+      default-server check maxconn 5000
+      server 4888-web-01 34.239.160.19:80 check
+      server 4888-web-02 34.231.243.196:80 check
